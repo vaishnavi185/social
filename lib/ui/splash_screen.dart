@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social/login%20screen/login.dart';
 import 'package:social/ui/page1.dart';
 class splash extends StatefulWidget {
   const splash({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _splashState extends State<splash> {
   navigateToHome()async{
     await Future.delayed(Duration(milliseconds: 1500),(){});
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder:(context)=>HOME()));
+        MaterialPageRoute(builder:(context)=>login()));
   }
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,9 @@ class _splashState extends State<splash> {
                 fit: BoxFit.cover,
               )
           ),
-          child: Text(
+
+          child:
+          Text(
             "Instagram",
             textAlign: TextAlign.center,
             style: TextStyle(

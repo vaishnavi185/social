@@ -1,9 +1,17 @@
+import 'dart:typed_data';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:social/fun/storage.dart';
 import 'package:social/fun/upload_img.dart';
+import 'package:social/ui/notify.dart';
 import 'package:social/ui/search%20page.dart';
+import 'package:uuid/uuid.dart';
 import 'home_page.dart';
+import 'profile.dart';
 class HOME extends StatefulWidget {
   const HOME({Key? key}) : super(key: key);
 
@@ -13,16 +21,26 @@ class HOME extends StatefulWidget {
 
 class _HOMEState extends State<HOME> {
   int currentIndex=0;
+  Uint8List? _image;
   final screens =[
     
     home_pg(),
     search(),
     // Center(child: Text("add", style: TextStyle(color: Colors.white),),),
-    Center(child: Text("notification",style: TextStyle(color: Colors.white),),),
+    notification(),
+    ProfileScreen(
 
-    Center(child: Text("profile",style: TextStyle(color: Colors.white),),)
+    ),
+
   ];
   @override
+  void selectImage()async{
+    Uint8List? im = await pickImage(ImageSource.gallery);
+    setState(() {
+      _image=im;
+
+    });
+  }
   Widget build(BuildContext context) {
 
 
@@ -30,25 +48,7 @@ class _HOMEState extends State<HOME> {
     return Scaffold(
 
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text("Instagram",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            color: Colors.white
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              // Handle menu button press
-            },
-          ),
-        ],
 
-      ),
       body:
       screens[currentIndex],
        bottomNavigationBar: BottomNavigationBar(
@@ -100,18 +100,20 @@ class _HOMEState extends State<HOME> {
 
          ],
        ),
+
       floatingActionButton: FloatingActionButton(
-                 onPressed: (){
-                   // uploadImage();
-                 },
+        onPressed: ()  {
+
+        },
         backgroundColor: Colors.white,
         mini: true,
         tooltip: 'add',
-        child: Icon(Icons.add,
+        child: Icon(
+          Icons.add,
           color: Colors.black,
         ),
-
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
     );
