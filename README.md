@@ -1,16 +1,29 @@
-# social
+🌸 AniConnect – Anime-Themed Social Media App
+A vibrant social media platform built with Flutter & Firebase, designed for anime fans to connect, share, and explore their favorite worlds.
 
-A new Flutter project.
+🌟 Features
+🧑‍🤝‍🧑 User Profiles – Create and customize anime-themed profiles with avatars and bios
 
-## Getting Started
+🖼️ Image & Post Sharing – Upload anime-related content, write captions, and interact with others
 
-This project is a starting point for a Flutter application.
+💬 Real-Time Chat – Connect with fellow fans through 1-on-1 or group chat powered by Firebase
 
-A few resources to get you started if this is your first Flutter project:
+❤️ Like & Comment System – Engage with posts using likes and a threaded comment interface
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🔍 Explore Feed – Discover trending anime posts and suggested users
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+📱 Responsive UI – Beautiful and responsive design themed around anime visuals
+
+🔔 Push Notifications – Stay updated with real-time alerts for likes, comments, and messages
+
+🛠️ Tech Stack
+Technology	Description
+Flutter	Cross-platform UI toolkit for building mobile apps
+Firebase	Backend services including Auth, Firestore, Storage, and Cloud Messaging
+Cloud Firestore	Real-time database for posts, users, and messages
+Firebase Auth	Secure login with email/password
+Firebase Storage	Store images and user-uploaded media
+Firebase Messaging	Push notifications for real-time interactions
+
+##Preview
+![StudyHub Preview](Untitled%20design.jpg)
